@@ -1,0 +1,48 @@
+<div class="log-in">
+  <section class="login-block">
+    <div class="container">
+    	<div class="row">
+    	  <div class="col-md-4 login-sec">
+          <h2 class="text-center">Log in</h2>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-form'}) do |f| %>
+            <div class="form-group">
+              <%= f.label :email, for: "exampleInputEmail1", class: "text-uppercase" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control",  placeholder:"" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password, for: "password", class: "text-uppercase" %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control",  placeholder:""  %>
+            </div>
+
+            <div class="form-check">
+              <label class="form-check-label">
+                <% if devise_mapping.rememberable? -%>
+                    <%= f.check_box :remember_me, class: "form-check-input" %>
+                    <%= f.label :remember_me %>
+                <% end -%>
+              </label>
+              <%= f.submit "Log in", class: 'class="btn btn-login float-right"' %>
+            </div>
+            <div class="btn btn-login float-center">
+              <%= render "users/shared/links" %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="col-md-8 banner-sec">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <%= image_tag("login-bg", class: 'd-block img-fluid')%>
+                <!-- <img class="d-block img-fluid" src="" alt="First slide"> -->
+              </div>
+            </div>
+    	    </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+<div>
